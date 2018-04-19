@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Name="FS642002.rpx">
+	  <Filters>
+		<FilterExp>
+		  <DataField>FSAppointment.SrvOrdType</DataField>
+		  <Value>@SrvOrdType</Value>
+		</FilterExp>
+		<FilterExp>
+		  <DataField>FSAppointment.RefNbr</DataField>
+		  <Value>@RefNbr</Value>
+		</FilterExp>
+		<FilterExp>
+		  <DataField>FSSODet.LineType</DataField>
+		  <OpenBraces>1</OpenBraces>
+		  <Operator>Or</Operator>
+		  <Value>@Comment</Value>
+		</FilterExp>
+		<FilterExp>
+		  <DataField>FSSODet.LineType</DataField>
+		  <Operator>Or</Operator>
+		  <Value>@Instruction</Value>
+		</FilterExp>
+		<FilterExp>
+		  <CloseBraces>1</CloseBraces>
+		  <DataField>FSSODet.LineType</DataField>
+		  <Value>@Inventory</Value>
+		</FilterExp>
+	  </Filters>
+	  <Parameters>
+		<ReportParameter>
+		  <Name>SrvOrdType</Name>
+		  <Nullable>True</Nullable>
+		  <Prompt>Service Order Type</Prompt>
+		  <Required>True</Required>
+		  <ViewName>=Report.GetFieldSchema('FSSrvOrdType.SrvOrdType')</ViewName>
+		</ReportParameter>
+		<ReportParameter>
+		  <Name>RefNbr</Name>
+		  <Nullable>True</Nullable>
+		  <Prompt>Service Order Number</Prompt>
+		  <Required>True</Required>
+		  <ViewName>=Report.GetFieldSchema('FSAppointment.RefNbr,SrvOrdType')</ViewName>
+		</ReportParameter>
+		<ReportParameter>
+		  <DefaultValue>='CM_PT'</DefaultValue>
+		  <Name>Comment</Name>
+		  <Visible>False</Visible>
+		</ReportParameter>
+		<ReportParameter>
+		  <DefaultValue>='IT_PT'</DefaultValue>
+		  <Name>Instruction</Name>
+		  <Visible>False</Visible>
+		</ReportParameter>
+		<ReportParameter>
+		  <DefaultValue>='SLPRO'</DefaultValue>
+		  <Name>Inventory</Name>
+		  <Visible>False</Visible>
+		</ReportParameter>
+	  </Parameters>
+	  <Relations>
+		<ReportRelation>
+		  <ChildName>FSAppointmentDet</ChildName>
+		  <Links>
+			<RelationRow>
+			  <ChildField>AppointmentID</ChildField>
+			  <ParentField>AppointmentID</ParentField>
+			</RelationRow>
+		  </Links>
+		  <ParentName>FSAppointment</ParentName>
+		</ReportRelation>
+		<ReportRelation>
+		  <ChildName>FSSODet</ChildName>
+		  <Links>
+			<RelationRow>
+			  <ChildField>SODetID</ChildField>
+			  <ParentField>SODetID</ParentField>
+			</RelationRow>
+		  </Links>
+		  <ParentName>FSAppointmentDet</ParentName>
+		</ReportRelation>
+	  </Relations>
+	  <SchemaUrl>http://localhost/Acumatica61/</SchemaUrl>
+	  <StylesTemplate>TemplateForm.rpx</StylesTemplate>
+	  <Tables>
+		<ReportTable Name="FSSODet">
+		  <Fields>
+			<ReportField Name="BillableQty">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="BillableTime"></ReportField>
+			<ReportField Name="BillingRule"></ReportField>
+			<ReportField Name="CheckOutDateTime">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="CheckOutFlag">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="CreatedByID"></ReportField>
+			<ReportField Name="CreatedByID_Creator_username"></ReportField>
+			<ReportField Name="CreatedByID_description"></ReportField>
+			<ReportField Name="CreatedByScreenID"></ReportField>
+			<ReportField Name="CreatedDateTime">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="EquipmentID"></ReportField>
+			<ReportField Name="EquipmentID_description"></ReportField>
+			<ReportField Name="EquipmentID_FSEquipment_descr"></ReportField>
+			<ReportField Name="EstimatedDuration"></ReportField>
+			<ReportField Name="InventoryID"></ReportField>
+			<ReportField Name="InventoryID_description"></ReportField>
+			<ReportField Name="InventoryID_InventoryItem_descr"></ReportField>
+			<ReportField Name="IsBillable">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="LastModifiedByID"></ReportField>
+			<ReportField Name="LastModifiedByID_description"></ReportField>
+			<ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+			<ReportField Name="LastModifiedByScreenID"></ReportField>
+			<ReportField Name="LastModifiedDateTime">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="LineRef"></ReportField>
+			<ReportField Name="LineType"></ReportField>
+			<ReportField Name="Mem_LastReferencedBy"></ReportField>
+			<ReportField Name="NoteActivity"></ReportField>
+			<ReportField Name="NoteFiles"></ReportField>
+			<ReportField Name="NoteID">
+			  <DataType>Object</DataType>
+			</ReportField>
+			<ReportField Name="NoteImages"></ReportField>
+			<ReportField Name="NoteText"></ReportField>
+			<ReportField Name="PostID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ProjectID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ProjectTaskID"></ReportField>
+			<ReportField Name="ProjectTaskID_description"></ReportField>
+			<ReportField Name="ProjectTaskID_PMTask_description"></ReportField>
+			<ReportField Name="Qty">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="ScheduleDetID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ServiceID"></ReportField>
+			<ReportField Name="ServiceID_description"></ReportField>
+			<ReportField Name="ServiceID_InventoryItem_descr"></ReportField>
+			<ReportField Name="SiteID"></ReportField>
+			<ReportField Name="SiteID_description"></ReportField>
+			<ReportField Name="SiteID_INSite_descr"></ReportField>
+			<ReportField Name="SODetID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="SOID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="SourceLineID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="SourceLineNbr">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Status"></ReportField>
+			<ReportField Name="SubItemID"></ReportField>
+			<ReportField Name="TranAmt">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="TranDate">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="TranDesc"></ReportField>
+			<ReportField Name="tstamp"></ReportField>
+			<ReportField Name="UnitPrice">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="UOM"></ReportField>
+		  </Fields>
+		  <FullName>PX.Objects.FS.FSSODet</FullName>
+		</ReportTable>
+		<ReportTable Name="FSAppointment">
+		  <Fields>
+			<ReportField Name="ActualDateTimeBegin">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeBegin_Date">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeBegin_Time">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeEnd">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeEnd_Date">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeEnd_Time">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDurationTotal"></ReportField>
+			<ReportField Name="AdditionalCommentsCustomer"></ReportField>
+			<ReportField Name="AdditionalCommentsStaff"></ReportField>
+			<ReportField Name="AgreementSignature">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="AppointmentCustomID"></ReportField>
+			<ReportField Name="AppointmentID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="AttendeeCount">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="AutoDocDesc"></ReportField>
+			<ReportField Name="Confirmed">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="ContactEmail"></ReportField>
+			<ReportField Name="ContactName"></ReportField>
+			<ReportField Name="ContactPhone"></ReportField>
+			<ReportField Name="CreatedByID"></ReportField>
+			<ReportField Name="CreatedByID_Creator_username"></ReportField>
+			<ReportField Name="CreatedByID_description"></ReportField>
+			<ReportField Name="CreatedByScreenID"></ReportField>
+			<ReportField Name="CreatedDateTime">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="CustomDateTimeEnd"></ReportField>
+			<ReportField Name="CustomDateTimeStart"></ReportField>
+			<ReportField Name="CustomerLocation"></ReportField>
+			<ReportField Name="CustomerName"></ReportField>
+			<ReportField Name="customerSignaturePath"></ReportField>
+			<ReportField Name="CustomID"></ReportField>
+			<ReportField Name="CustomRoomID"></ReportField>
+			<ReportField Name="DeliveryNotes"></ReportField>
+			<ReportField Name="DocDesc"></ReportField>
+			<ReportField Name="DriveTime">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="EmployeeCount">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="EmployeeID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="EmployeeList"></ReportField>
+			<ReportField Name="EstimatedDurationTotal"></ReportField>
+			<ReportField Name="EstimatedLineTotal">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="ExecutionDate">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="FinPeriodID"></ReportField>
+			<ReportField Name="FirstServiceDesc"></ReportField>
+			<ReportField Name="FullNameSignature"></ReportField>
+			<ReportField Name="GeneratedBySystem">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="GenerationID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="isBeingCloned">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="IsRouteAppoinment">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="KeepActualTotalServicesDuration">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="KeepTotalServicesDuration">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="LastModifiedByID"></ReportField>
+			<ReportField Name="LastModifiedByID_description"></ReportField>
+			<ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+			<ReportField Name="LastModifiedByScreenID"></ReportField>
+			<ReportField Name="LastModifiedDateTime">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="LocationDesc"></ReportField>
+			<ReportField Name="LongDescr"></ReportField>
+			<ReportField Name="MapLatitude">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="MapLongitude">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="Mem_ActualDateTime_Month"></ReportField>
+			<ReportField Name="Mem_ActualDateTime_Year">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_ActualDateTimeBegin_Time">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_ActualDateTimeEnd_Time">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_AppointmentHours">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="Mem_BatchNbr"></ReportField>
+			<ReportField Name="Mem_BillByLocation">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="Mem_BillingBy"></ReportField>
+			<ReportField Name="Mem_BillingCycle"></ReportField>
+			<ReportField Name="Mem_BillingCycle_description"></ReportField>
+			<ReportField Name="Mem_BillingCycle_FSBillingCycle_descr"></ReportField>
+			<ReportField Name="Mem_BillingCycleType"></ReportField>
+			<ReportField Name="Mem_BranchID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_BranchLocationID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_CustomerID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_CutOffDate">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="Mem_Duration">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_FrequencyType"></ReportField>
+			<ReportField Name="Mem_IdleRate">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="Mem_InvoiceDate">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="Mem_InvoiceDocType"></ReportField>
+			<ReportField Name="Mem_InvoiceOnlyCompletedServiceOrder">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="Mem_InvoiceRef"></ReportField>
+			<ReportField Name="Mem_LastRouteDocumentID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_MonthlyFrequency">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_OccupationalRate">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="Mem_ReturnValueID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_RoomID"></ReportField>
+			<ReportField Name="Mem_RouteDocument">
+			  <DataType>Object</DataType>
+			</ReportField>
+			<ReportField Name="Mem_ScheduledHours">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="Mem_ScheduledTimeBegin"></ReportField>
+			<ReportField Name="Mem_SendInvoicesTo"></ReportField>
+			<ReportField Name="Mem_ShowAttendees">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="Mem_SMequipmentID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="Mem_WeeklyFrequency">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="NoteActivity"></ReportField>
+			<ReportField Name="NoteFiles"></ReportField>
+			<ReportField Name="NoteID">
+			  <DataType>Object</DataType>
+			</ReportField>
+			<ReportField Name="NoteImages"></ReportField>
+			<ReportField Name="NoteText"></ReportField>
+			<ReportField Name="OldEmployeeID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="OriginalAppointmentID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="LineTotal">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="RefNbr"></ReportField>
+			<ReportField Name="RoomDesc"></ReportField>
+			<ReportField Name="RouteDocumentID"></ReportField>
+			<ReportField Name="RouteID"></ReportField>
+			<ReportField Name="RouteID_description"></ReportField>
+			<ReportField Name="RouteID_FSRoute_descr"></ReportField>
+			<ReportField Name="RoutePosition">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ScheduledDateTimeBegin">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ScheduledDateTimeBegin_Date">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ScheduledDateTimeBegin_Time">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ScheduledDateTimeEnd">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ScheduledDateTimeEnd_Date">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ScheduledDateTimeEnd_Time">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ScheduleID"></ReportField>
+			<ReportField Name="Selected">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="ServiceContractID"></ReportField>
+			<ReportField Name="ServiceCount">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ServiceList"></ReportField>
+			<ReportField Name="SOID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="SORefNbr"></ReportField>
+			<ReportField Name="SrvOrdType"></ReportField>
+			<ReportField Name="SrvOrdType_description"></ReportField>
+			<ReportField Name="SrvOrdType_FSSrvOrdType_descr"></ReportField>
+			<ReportField Name="Status"></ReportField>
+			<ReportField Name="TimeLocked">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="TimeRegistered">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="TotalAttendees">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="tstamp"></ReportField>
+			<ReportField Name="UnreachedCustomer">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="ValidatedByDispatcher">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="VehicleID"></ReportField>
+			<ReportField Name="VehicleID_description"></ReportField>
+			<ReportField Name="VehicleID_FSVehicle_descr"></ReportField>
+			<ReportField Name="WFStageCD"></ReportField>
+			<ReportField Name="WFStageID"></ReportField>
+			<ReportField Name="WildCard_AssignedEmployeesCellPhoneList"></ReportField>
+			<ReportField Name="WildCard_AssignedEmployeesList"></ReportField>
+			<ReportField Name="WildCard_CustomerPrimaryContact"></ReportField>
+			<ReportField Name="WildCard_CustomerPrimaryContactCell"></ReportField>
+		  </Fields>
+		  <FullName>PX.Objects.FS.FSAppointment</FullName>
+		</ReportTable>
+		<ReportTable Name="FSAppointmentDet">
+		  <Fields>
+			<ReportField Name="ActualDateTimeBegin">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeBegin_Date">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeBegin_Time">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeEnd">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeEnd_Date">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDateTimeEnd_Time">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="ActualDuration"></ReportField>
+			<ReportField Name="AppDetID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="AppointmentID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ApprovedTime">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="BillableQty">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="BillableTime"></ReportField>
+			<ReportField Name="BillingRule"></ReportField>
+			<ReportField Name="CreatedByID"></ReportField>
+			<ReportField Name="CreatedByID_Creator_username"></ReportField>
+			<ReportField Name="CreatedByID_description"></ReportField>
+			<ReportField Name="CreatedByScreenID"></ReportField>
+			<ReportField Name="CreatedDateTime">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="EstimatedDuration"></ReportField>
+			<ReportField Name="EstimatedQty">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="EstimatedTranAmt">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="ExpenseEmployeeID"></ReportField>
+			<ReportField Name="ExpenseEmployeeID_BAccountStaffMember_acctName"></ReportField>
+			<ReportField Name="ExpenseEmployeeID_description"></ReportField>
+			<ReportField Name="InventoryID"></ReportField>
+			<ReportField Name="InventoryID_description"></ReportField>
+			<ReportField Name="InventoryID_InventoryItem_descr"></ReportField>
+			<ReportField Name="IsBillable">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="IsPrepaid">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="LastModifiedByID"></ReportField>
+			<ReportField Name="LastModifiedByID_description"></ReportField>
+			<ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+			<ReportField Name="LastModifiedByScreenID"></ReportField>
+			<ReportField Name="LastModifiedDateTime">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="LineType"></ReportField>
+			<ReportField Name="NoteActivity"></ReportField>
+			<ReportField Name="NoteFiles"></ReportField>
+			<ReportField Name="NoteID">
+			  <DataType>Object</DataType>
+			</ReportField>
+			<ReportField Name="NoteImages"></ReportField>
+			<ReportField Name="NoteText"></ReportField>
+			<ReportField Name="PostID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ProjectID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ProjectTaskID"></ReportField>
+			<ReportField Name="ProjectTaskID_description"></ReportField>
+			<ReportField Name="ProjectTaskID_PMTask_description"></ReportField>
+			<ReportField Name="Qty">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="ScheduleDetID">
+			  <DataType>Int32</DataType>
+			</ReportField>
+			<ReportField Name="ServiceID"></ReportField>
+			<ReportField Name="ServiceID_description"></ReportField>
+			<ReportField Name="ServiceID_InventoryItem_descr"></ReportField>
+			<ReportField Name="ServiceType"></ReportField>
+			<ReportField Name="SiteID"></ReportField>
+			<ReportField Name="SiteID_description"></ReportField>
+			<ReportField Name="SiteID_INSite_descr"></ReportField>
+			<ReportField Name="SMEquipmentID"></ReportField>
+			<ReportField Name="SMEquipmentID_description"></ReportField>
+			<ReportField Name="SMEquipmentID_FSEquipment_descr"></ReportField>
+			<ReportField Name="SODetID"></ReportField>
+			<ReportField Name="SODetLoaded">
+			  <DataType>Boolean</DataType>
+			</ReportField>
+			<ReportField Name="Status"></ReportField>
+			<ReportField Name="SubItemID"></ReportField>
+			<ReportField Name="TimeCardCD"></ReportField>
+			<ReportField Name="TranAmt">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="TranDate">
+			  <DataType>DateTime</DataType>
+			</ReportField>
+			<ReportField Name="TranDesc"></ReportField>
+			<ReportField Name="tstamp"></ReportField>
+			<ReportField Name="UnitPrice">
+			  <DataType>Decimal</DataType>
+			</ReportField>
+			<ReportField Name="UOM"></ReportField>
+		  </Fields>
+		  <FullName>PX.Objects.FS.FSAppointmentDet</FullName>
+		</ReportTable>
+	  </Tables>
+	  <Sections>
+		<PageHeader Name="pageHeaderSection1">
+		  <Height>0.42328cm</Height>
+		  <Visible>False</Visible>
+		</PageHeader>
+		<Detail Name="detailSection1">
+		  <Height>0.42328cm</Height>
+		  <Items>
+			<TextBox Name="textBox11">
+			  <CanGrow>True</CanGrow>
+			  <Location>216px, 0px</Location>
+			  <Size>110px, 16px</Size>
+			  <StyleName>Normal</StyleName>
+			  <Value>= IIF ([FSAppointmentDet.SMEquipmentID] &lt;&gt; null, [FSAppointmentDet.SMEquipmentID] + ' - ' , '' ) +  #010; IIF([FSAppointmentDet.SMEquipmentID_description] &lt;&gt; null, [FSAppointmentDet.SMEquipmentID_description] , '')#010;</Value>
+			</TextBox>
+			<TextBox Name="textBox14">
+			  <Format>0.00</Format>
+			  <Location>468px, 0px</Location>
+			  <Size>72px, 16px</Size>
+			  <Style>
+				<TextAlign>Right</TextAlign>
+			  </Style>
+			  <StyleName>Normal</StyleName>
+			  <Value>= IIf ( [FSAppointmentDet.LineType] &lt;&gt; [@Comment] and [FSAppointmentDet.LineType] &lt;&gt; [@Instruction], [FSAppointmentDet.UnitPrice], '') </Value>
+			</TextBox>
+			<TextBox Name="textBox15">
+			  <Location>0px, 0px</Location>
+			  <Size>39px, 16px</Size>
+			  <StyleName>Normal</StyleName>
+			  <Value>=[FSSODet.LineRef]</Value>
+			</TextBox>
+			<TextBox Name="textBox17">
+			  <Format>0.00</Format>
+			  <Location>608px, 0px</Location>
+			  <Size>89px, 16px</Size>
+			  <Style>
+				<TextAlign>Right</TextAlign>
+			  </Style>
+			  <StyleName>Normal</StyleName>
+			  <Value>= IIf ( [FSAppointmentDet.LineType] &lt;&gt; [@Comment] and [FSAppointmentDet.LineType] &lt;&gt; [@Instruction], [FSAppointmentDet.TranAmt], '')  </Value>
+			</TextBox>
+			<TextBox Name="textBox2">
+			  <Location>40px, 0px</Location>
+			  <Size>72px, 16px</Size>
+			  <StyleName>Normal</StyleName>
+			  <Value>=[FSAppointmentDet.LineType]</Value>
+			</TextBox>
+			<TextBox Name="textBox4">
+			  <Location>326px, 0px</Location>
+			  <Size>82px, 16px</Size>
+			  <Style>
+				<TextAlign>Right</TextAlign>
+			  </Style>
+			  <StyleName>Normal</StyleName>
+			  <Value>= IIf ( [FSAppointmentDet.LineType] &lt;&gt; [@Comment] and [FSAppointmentDet.LineType] &lt;&gt; [@Instruction], [FSAppointmentDet.SiteID], '')</Value>
+			</TextBox>
+			<TextBox Name="textBox42">
+			  <CanGrow>True</CanGrow>
+			  <Location>112px, 0px</Location>
+			  <Size>104px, 16px</Size>
+			  <StyleName>Normal</StyleName>
+			  <Value>=IIF ([FSAppointmentDet.InventoryID]&lt;&gt; null, [FSAppointmentDet.InventoryID] +' - ', '')  + #010; IIF([FSAppointmentDet.TranDesc] &lt;&gt; null, [FSAppointmentDet.TranDesc], '')#010;</Value>
+			</TextBox>
+			<TextBox Name="textBox51">
+			  <Format>=[FSAppointmentDet.Qty.Format]</Format>
+			  <Location>408px, 0px</Location>
+			  <Size>60px, 16px</Size>
+			  <Style>
+				<TextAlign>Right</TextAlign>
+			  </Style>
+			  <StyleName>Normal</StyleName>
+			  <Value>= IIf ( [FSAppointmentDet.LineType] &lt;&gt; [@Comment] and [FSAppointmentDet.LineType] &lt;&gt; [@Instruction], IIf([FSAppointment.Status] = 'A' Or [FSAppointment.Status] = 'S', [FSAppointmentDet.EstimatedQty],[FSAppointmentDet.Qty]), '')</Value>
+			</TextBox>
+			<TextBox Name="textBox7">
+			  <Format>0.00</Format>
+			  <Location>540px, 0px</Location>
+			  <Size>68px, 16px</Size>
+			  <Style>
+				<TextAlign>Right</TextAlign>
+			  </Style>
+			  <StyleName>Normal</StyleName>
+			  <Value>= IIf ( [FSAppointmentDet.LineType] &lt;&gt; [@Comment] and [FSAppointmentDet.LineType] &lt;&gt; [@Instruction],[FSAppointmentDet.IsBillable], '') </Value>
+			</TextBox>
+		  </Items>
+		</Detail>
+		<PageFooter Name="pageFooterSection1">
+		  <Height>0.42328cm</Height>
+		  <Visible>False</Visible>
+		</PageFooter>
+	  </Sections>
+	  <Items />
+	  <Groups>
+		<Group Name="group1">
+		  <Grouping>
+			<GroupExp>
+			  <DataField>FSAppointment.SrvOrdType</DataField>
+			</GroupExp>
+			<GroupExp>
+			  <DataField>FSAppointment.RefNbr</DataField>
+			</GroupExp>
+		  </Grouping>
+		  <Headers>
+			<Header Name="groupHeaderSection1">
+			  <Height>0.84656cm</Height>
+			  <Items>
+				<TextBox Name="textBox1">
+				  <Location>540px, 16px</Location>
+				  <Size>68px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Right>2px</Right>
+					</Padding>
+					<TextAlign>Right</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>BILLABLE</Value>
+				</TextBox>
+				<TextBox Name="textBox10">
+				  <Location>468px, 16px</Location>
+				  <Size>72px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Right>2px</Right>
+					</Padding>
+					<TextAlign>Right</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>UNIT PRICE</Value>
+				</TextBox>
+				<TextBox Name="textBox13">
+				  <Location>608px, 16px</Location>
+				  <Size>88px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Right>2px</Right>
+					</Padding>
+					<TextAlign>Right</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColored</StyleName>
+				  <Value>TRAN. AMOUNT</Value>
+				</TextBox>
+				<TextBox Name="textBox3">
+				  <Location>326px, 16px</Location>
+				  <Multiline>False</Multiline>
+				  <Size>82px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Right>2px</Right>
+					</Padding>
+					<TextAlign>Right</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>WAREHOUSE</Value>
+				  <WrapText>False</WrapText>
+				</TextBox>
+				<TextBox Name="textBox33">
+				  <Location>1px, 16px</Location>
+				  <Size>39px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Left>2px</Left>
+					</Padding>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>NO.</Value>
+				</TextBox>
+				<TextBox Name="textBox34">
+				  <Location>408px, 16px</Location>
+				  <Size>60px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Right>2px</Right>
+					</Padding>
+					<TextAlign>Right</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>QTY.</Value>
+				</TextBox>
+				<TextBox Name="textBox5">
+				  <Location>1px, 0px</Location>
+				  <Size>695px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Left>2px</Left>
+					</Padding>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>INVENTORY ITEMS</Value>
+				</TextBox>
+				<TextBox Name="textBox6">
+				  <Location>216px, 16px</Location>
+				  <Size>110px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Left>2px</Left>
+					</Padding>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>TARGET EQ.</Value>
+				  <WrapText>False</WrapText>
+				</TextBox>
+				<TextBox Name="textBox8">
+				  <Location>40px, 16px</Location>
+				  <Size>72px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Left>2px</Left>
+					</Padding>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>LINE TYPE</Value>
+				</TextBox>
+				<TextBox Name="textBox9">
+				  <Location>112px, 16px</Location>
+				  <Size>104px, 16px</Size>
+				  <Style>
+					<Padding>
+					  <Left>2px</Left>
+					</Padding>
+					<VerticalAlign>Middle</VerticalAlign>
+				  </Style>
+				  <StyleName>Heading1BCColoredRightBorder</StyleName>
+				  <Value>ITEM</Value>
+				</TextBox>
+			  </Items>
+			</Header>
+		  </Headers>
+		  <Footers>
+			<Footer Name="groupFooterSection1">
+			  <Height>0.42328cm</Height>
+			  <Visible>False</Visible>
+			</Footer>
+		  </Footers>
+		</Group>
+	  </Groups>
+</Report>

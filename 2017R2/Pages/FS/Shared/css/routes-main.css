@@ -1,0 +1,349 @@
+.container{
+    margin: 17px 15px 0px 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Treview */
+
+.employee-icon-cls {
+    background-image: url(../img/tree/folder.png) !important;
+}
+
+.appointment-icon-cls {
+    background-image: url(../img/tree/leaf.png) !important;
+}
+
+.warning-appointment-icon-cls {
+    background-image: url(../img/tree/warning-appointment.png) !important;
+}
+
+.unassigned-appointment-icon-cls{
+    background-image: url(../img/tree/icon-globe-appointment-blue.png) !important;
+}
+
+.tree-grid-main > .x-grid-header-ct > .x-box-inner {
+    margin-left: 1px;
+}
+
+/** ----- DatePicker ----- */
+
+.x-tree-arrows .x-tree-expander {
+    background-image: url(../img/tree/arrows.png) !important;
+}
+
+.x-grid-row-before-focused .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+    border-bottom-width: 1px;
+}
+.x-grid-row-before-selected .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+}
+
+.x-grid-row-focused .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+    border-bottom-width: 1px;
+}
+
+.x-grid-row-selected .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+}
+
+.x-grid-body .x-grid-table-focused-first {
+    border-top: 1px solid transparent !important;
+}
+
+/*Second tbar treeview*/
+.icon-previous
+{   
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/general/glyphicons-halflings.png) 40px -70px !important;
+}
+
+.icon-next
+{
+   height: 16px !important;
+   width: 16px !important;
+   background: url(../img/general/glyphicons-halflings.png) 16px -70px !important;
+}
+
+.icon-save
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/button/save-btn.png) 1px 1px !important;
+    margin: 0 0 0 1px;
+}
+
+.icon-undo
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/button/undo-btn.png) 0px 1px !important;
+    margin: 0 0 0 1px;
+}
+
+.x-btn-default-toolbar-medium {
+    padding: 1px 0px 0px 1px !important;
+    top: 0px !important;
+    width: 23px !important;
+    height: 23px !important;
+}
+
+.x-menu-date-item {
+    border-color: #BBBBBB !important;
+}
+
+.x-datepicker-header {
+    background-image: none !important;
+    background-color: #4E576A !important;
+}
+
+.x-datepicker-arrow {
+    background-color: #4E576A !important;
+}
+
+.x-datepicker-footer, .x-monthpicker-buttons {
+    background-image: none !important;
+    background-color: #E5E9EE !important;
+    border-color: #BBBBBB !important;
+}
+
+.x-panel-body-default {
+    border-color: #BBBBBB !important;
+}
+
+.x-datepicker-prev {
+    left: 6px;
+    background-image: url(../img/date-picker/left-btn.png) !important;
+}
+
+.x-datepicker-next {
+    right: 6px;
+    background-image: url(../img/date-picker/right-btn.png) !important;
+}
+
+/*----- ToolTips -----*/
+
+.x-hidden-display
+{
+    display: none;
+}
+
+
+.tooltip-appointment
+{
+    /*width:380px !important;*/
+}
+
+.tooltip-fieldset
+{
+    padding: 0px 5px 5px 5px !important;
+}
+
+.tooltip-fieldset-last
+{
+    margin-bottom: 0px !important;
+}
+
+.tooltip-fieldset legend
+{
+
+    /*padding: 3px 5px 0px 0px;*/
+    height: 18px !important;
+}
+
+.tooltip-leyend-title
+{
+    color: blue;
+    /*font-weight:bold;*/
+}
+
+/* ----- Tooltip Background* ----- */
+.x-tip.x-layer.x-tip-default
+{
+    /*background-color: #F1F1F1 !important; light grey*/
+    background-color: #E5E9EE !important;
+}
+
+.ap-tooltip,.so-tooltip
+{
+    width: 100% !important;
+    font-family: tahoma,arial,verdana,sans-serif;
+    padding: 0px 4px 4px 4px;
+}
+
+/*Tooltip Date info style*/
+.tool-tip-float-right
+{
+    float: right;
+    width: 47%;
+    margin-left: 2px;
+}
+
+/*Tooltip Date info style*/
+.tool-tip-float-left
+{
+    float: left;
+    width: 50%;
+}
+
+/*Tooltip Title*/
+.so-tooltip-title,.ap-tooltip-title
+{
+    font-weight:bold;
+    padding: 5px 0px 5px 0px;
+    /*border-bottom:1px solid #BBBBBB;*/
+}
+
+/*Tooltip Info*/
+.so-tooltip-info,.ap-tooltip-info,.em-tooltip-info,.sc-ap-tooltip-info
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.eq-tooltip-info,.sc-tooltip-info
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/*less left separation*/
+ul.sc-tooltip-list,ul.em-tooltip-list,ul.eq-tooltip-list
+{
+    margin: 0px 0 0 -20px;
+
+}
+
+/*less left separation*/
+.sc-tooltip-list-inner,.em-tooltip-list-inner,.eq-tooltip-list-inner
+{
+    margin: 2px 0 2px -25px;
+}
+
+.x-tip-default
+{
+    border-color: #BBBBBB !important;
+}
+
+/* Fixing tooltip clasees */
+
+.x-fieldset {
+    border: 1px solid #b5b8c8;
+    padding: 0 10px;
+    margin: 0 0 10px;
+}
+
+.x-fieldset-header-text {
+    font: normal 11px/14px tahoma,arial,verdana,sans-serif;
+    margin: -1px 0px 0px 8px;
+}
+
+.confirmed-appointment-warning{
+    margin-top: 10px;
+    color: #D6222A;
+}
+
+.contact
+{
+    width:16px;
+    height:14px;
+    background: transparent url(../img/general/sprite.png) 72px 194px;
+    vertical-align: middle;
+    float:left;
+}
+
+.unassigned-contact{
+    width:16px;
+    height:16px;
+    background: transparent url(../img/tree/icon-globe-appointment-black.png);
+    vertical-align: middle;
+    float:left;
+    margin-right: 5px;
+}
+
+.warning-node
+{
+    color: #c08207;
+}
+
+/* toolbar for the save and cancel buttons */
+#main-container > .x-toolbar-default
+{
+    background-image: none !important;
+    background-color: #ffffff;
+}
+
+.add-remove-resources > img{
+     background-image: none !important;
+ }
+
+.add-remove-resources{
+    width: 15px !important;
+    height: 15px !important;
+    background: url(../img/general/add-remove-resources.png) !important;
+}
+
+/* Acumatica styles for all screen*/
+
+.x-panel-default {
+    border-color: #BBBBBB !important;
+}
+
+.x-docked-top {
+    background-color: #E5E9EE !important;
+}
+
+.x-panel-header-default {
+    background-image: none !important;
+    background-color: #E5E9EE !important;
+    border-color: #BBBBBB !important;
+}
+
+.x-toolbar-default {
+    border-color: #BBBBBB !important;
+    border-width: 1px !important;
+    background-image: none !important;
+    background-color: #E5E9EE !important;
+}
+
+.x-grid-header-ct {
+    cursor: default;
+    zoom: 1;
+    padding: 0;
+    border: 1px solid #BBBBBB;
+    border-bottom-color: #BBBBBB;
+    background-image: none;
+    background-color: #c5c5c5;
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#f9f9f9),color-stop(100%,#e3e4e6));
+    background-image: -webkit-linear-gradient(top,#f9f9f9,#e3e4e6);
+    background-image: -moz-linear-gradient(top,#f9f9f9,#e3e4e6);
+    background-image: -o-linear-gradient(top,#f9f9f9,#e3e4e6);
+    background-image: linear-gradient(top,#f9f9f9,#e3e4e6);
+}
+
+.x-panel-header-text-container-default {
+    font-family: Arial, sans-serif, Tahoma, Verdana !important;
+    font-size: 12px !important;
+    color: #4E576A !important;
+}
+
+.x-panel-body-default
+{
+    background: #FFFFFF !important;
+}
+
+.tab-filter > .x-tab-bar > .x-tab-bar-body > .x-horizontal-box-overflow-body
+{
+    background-color: #F5F5F5 !important;
+}
+
+

@@ -1,0 +1,30 @@
+﻿<div id="info-employee-route-template"  class="x-hidden-display">
+
+    <!-- Route Time-->
+    <tpl if = "routeTime != '' ">
+        <div class = "info-route-text">
+            <b>Route Time: </b> {routeTime}
+        </div>
+    </tpl>
+
+    <!-- Route Distance -->
+    <tpl if = "routeDistance != '' ">
+        <div class = "info-route-text">
+            <b>Route Distance:</b>
+                {routeDistance}
+            <tpl if = "!dirty ">
+                miles
+            </tpl>
+        </div>
+    </tpl>
+
+    <!-- Total Appointments -->
+    <tpl if = "totalAppointments != '' ">
+        <div class = "info-route-text">
+            <!-- Total - 2 (start location and end location) -->
+            <b>Number of Appointments: </b> {totalAppointments - 2}
+        </div>
+    </tpl>
+</div>
+
+

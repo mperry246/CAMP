@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B58C964D-3356-4E82-8407-D4C6737551AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CampCustomization</RootNamespace>
+    <AssemblyName>CampCustomization</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AuthorizeNet">
+      <HintPath>E:\Program Files (x86)\Acumatica ERP\TESTCONVERSION\Bin\AuthorizeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Avalara.AvaTax.Adapter">
+      <HintPath>E:\MSSQL\DATA\2017R2\Bin\Avalara.AvaTax.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers">
+      <HintPath>E:\MSSQL\DATA\2017R2\Bin\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="MQ.Objects">
+      <HintPath>E:\MSSQL\DATA\2017R2\Bin\MQ.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="MQPE">
+      <HintPath>E:\MSSQL\DATA\2017R2\Bin\MQPE.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Common">
+      <HintPath>E:\MSSQL\DATA\2017R2\Bin\PX.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Data">
+      <HintPath>E:\MSSQL\DATA\2017R2\Bin\PX.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Objects">
+      <HintPath>E:\MSSQL\DATA\2017R2\Bin\PX.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLC\ARInvoiceEntry_Extension.cs" />
+    <Compile Include="BLC\CAMPContractTypeMaint.cs" />
+    <Compile Include="BLC\CAMPDiscountReasonCodeMaint.cs" />
+    <Compile Include="BLC\CAMPLineofBusinessMaint.cs" />
+    <Compile Include="BLC\CAMPManufacturerMaint.cs" />
+    <Compile Include="BLC\CAMPProfileNumberMaint.cs" />
+    <Compile Include="BLC\CAMPTapeModelMaint.cs" />
+    <Compile Include="BLC\CustomerMaint_Extension.cs" />
+    <Compile Include="BLC\MaxQProductsRBRRContractMaintGraphExtension.cs" />
+    <Compile Include="BLC\MaxQProductsRBRRGenerateRecurringOrdersGraphExtension.cs" />
+    <Compile Include="BLC\NonStockItemMaint_Extension.cs" />
+    <Compile Include="BLC\NVLockboxMaint.cs" />
+    <Compile Include="BLC\NVLockboxSetupMaint.cs" />
+    <Compile Include="DAC\NVLockboxSetup.cs" />
+    <Compile Include="BLC\XMQARInvoiceEntryExt.cs" />
+    <Compile Include="DAC\ARRegisterExt.cs" />
+    <Compile Include="DAC\ARTranExt.cs" />
+    <Compile Include="DAC\AuthorizeBatch.cs" />
+    <Compile Include="DAC\AuthorizeNetHelperClass.cs" />
+    <Compile Include="DAC\BAccountExt.cs" />
+    <Compile Include="DAC\CampBTvNBT.cs" />
+    <Compile Include="DAC\CAMPContractType.cs" />
+    <Compile Include="DAC\CAMPDiscountReasonCode.cs" />
+    <Compile Include="DAC\CAMPLineofBusiness.cs" />
+    <Compile Include="DAC\CampLogoLogic.cs" />
+    <Compile Include="DAC\CAMPManufacturer.cs" />
+    <Compile Include="DAC\CampPositivePay.cs" />
+    <Compile Include="DAC\CAMPProfileNumber.cs" />
+    <Compile Include="DAC\CAMPTapeModel.cs" />
+    <Compile Include="DAC\CAMPTaxRates.cs" />
+    <Compile Include="DAC\InventoryItemExt.cs" />
+    <Compile Include="DAC\NVCollectionFilter.cs" />
+    <Compile Include="DAC\NVLockbox.cs" />
+    <Compile Include="DAC\NVLockboxPayment.cs" />
+    <Compile Include="DAC\NVLockboxPaymentDetails.cs" />
+    <Compile Include="DAC\ReasonCodeExt.cs" />
+    <Compile Include="DAC\vCAMPSingleProfileDocuments.cs" />
+    <Compile Include="DAC\XRBCancelReasonCdExtcs.cs" />
+    <Compile Include="DAC\XRBContrHdrExt.cs" />
+    <Compile Include="DAC\XRBGLDistExt.cs" />
+    <Compile Include="HelperClass\HelperClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

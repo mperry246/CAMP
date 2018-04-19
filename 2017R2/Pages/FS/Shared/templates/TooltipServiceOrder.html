@@ -1,0 +1,110 @@
+﻿<textarea id="tooltip-serviceorder" class="x-hidden-display">   
+    <div class = 'event-tip so-tooltip'>
+
+
+        <tpl if="ServiceOrder">
+            <div class = 'so-tooltip-title text-center'>
+                {ServiceOrder.RefNbr}
+            </div>
+
+            <fieldset class="x-fieldset x-fieldset-with-title x-fieldset-with-header x-fieldset-default  tooltip-fieldset" style="border-width: 1px; width: 100%;">
+                <legend class="x-fieldset-header x-fieldset-header-default">
+                    <span style="display:table;">
+                        <div  style="display:table-cell;height:100%;vertical-align:top;" class="">
+                            <div class="x-component x-fieldset-header-text x-component-default tooltip-leyend-title">
+                                Details
+                            </div>
+                        </div>
+                    </span>
+                </legend>
+
+                <!--Branch Location-->
+                <tpl if="ServiceOrder.BranchLocationDesc!=''">
+                    <b>Branch Location: </b>  {ServiceOrder.BranchLocationDesc}   <br/>
+                </tpl>
+
+                <!--Customer-->
+                <tpl if="ServiceOrder.CustomerDisplayName!=''">
+                    <b>Customer: </b>  {ServiceOrder.CustomerDisplayName}   <br/>
+                </tpl>
+
+                <!--Contact-->
+                <tpl if="ServiceOrder.ContactName!=''">
+                    <b>Contact: </b>  {ServiceOrder.ContactName}   <br/>
+                </tpl>
+
+                <!--Phone-->
+                <tpl if="ServiceOrder.ContactPhone!=''">
+                    <b>Phone: </b>  {ServiceOrder.ContactPhone}   <br/>
+                </tpl>
+
+                <!--Email-->
+                <tpl if="ServiceOrder.ContactEmail!=''">
+                    <b>Email: </b>  {ServiceOrder.ContactEmail}   <br/>
+                </tpl>
+
+                <!--Priority-->
+                <tpl if="ServiceOrder.Priority!=''">
+                <b>Priority: </b>
+                    <tpl if="ServiceOrder.Priority=='H'">
+                        HIGH
+                    </tpl>
+                    <tpl if="ServiceOrder.Priority=='M'">
+                        MEDIUM
+                    </tpl>
+                    <tpl if="ServiceOrder.Priority=='L'">
+                        LOW
+                    </tpl>
+                </tpl>
+
+                <br/>
+
+                <!--SLA-->
+                <tpl if="ServiceOrder.SLARemaning!=''">
+                    <b>SLA: </b>{ServiceOrder.SLARemaning}<br/>
+                </tpl>
+
+                <!--Creation Date-->
+                <tpl if="ServiceOrder.OrderDate!=''">
+                    <b>Creation Date: </b>   {ServiceOrder.OrderDate:date('Y-m-d')}  <br/>
+                </tpl>
+
+            </fieldset>
+        </tpl>
+
+
+            <fieldset class="x-fieldset x-fieldset-with-title x-fieldset-with-header x-fieldset-default  tooltip-fieldset tooltip-fieldset-last"  style="border-width: 1px; width: 100%;">
+                <legend class="x-fieldset-header x-fieldset-header-default">
+                    <span style="display:table;">
+                        <div  style="display:table-cell;height:100%;vertical-align:top;" class="">
+                            <div class="x-component x-fieldset-header-text x-component-default tooltip-leyend-title">
+                                Services
+                            </div>
+
+                        </div>
+                    </span>
+                </legend>
+                <tpl for="Services">
+                    <ul class = 'sc-tooltip-list'>
+                        <tpl if="ServiceCodes.length==0">
+                            <b>None</b>
+                        </tpl>
+
+                            <li>
+                                <b>{service.InventoryCD} </b>
+                                <ul class = 'sc-tooltip-list-inner'>
+                                    <tpl if="service.Descr">
+                                        <li>Description: {service.Descr}</li>
+                                    </tpl>
+                                    <tpl if="service.estimatedDuration!=''">
+                                        <li>Duration: {estimatedDuration}</li>
+                                    </tpl>
+                                </ul>
+                            </li>
+
+                    </ul>
+                </tpl>
+            </fieldset>
+    </div>
+</textarea>
+

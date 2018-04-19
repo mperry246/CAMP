@@ -1,0 +1,59 @@
+﻿<div id="info-route-template"  class="x-hidden-display">
+
+    <!-- Route Time-->
+    <tpl if = "routeTime != '' ">
+        <div class = "info-route-text">
+            <b>Route Time: </b> {routeTime}
+        </div>
+    </tpl>
+
+    <!-- Route Distance -->
+    <tpl if = "routeDistance != '' ">
+        <div class = "info-route-text">
+            <b>Route Distance:</b>
+                {routeDistance}
+            <tpl if = "!dirty ">
+                miles
+            </tpl>
+        </div>
+    </tpl>
+
+    <!-- Total Appointments -->
+    <tpl if = "totalAppointments != '' ">
+        <div class = "info-route-text">
+            <!-- Total - 2 (start location and end location) -->
+            <b>Number of Appointments: </b> {totalAppointments - 2}
+        </div>
+    </tpl>
+
+    <!--driver-->
+    <tpl if = "driver != '' ">
+        <div class = "info-route-text">
+            <b>Driver: </b> {driver}
+        </div>
+    </tpl>
+
+    <!--Vehicle Type-->
+    <tpl if = "vehicleType != '' ">
+        <div class = "info-route-text">
+            <b>Vehicle Type: </b> {vehicleType}
+        </div>
+    </tpl>
+
+    <!-- vehicle -->
+    <tpl if = "vehicle != '' ">
+        <div class = "info-route-text">
+            <b>Vehicle: </b> {vehicle}
+        </div>
+    </tpl>
+
+    <!--status-->
+    <tpl if = "status != '' ">
+        <div class = "info-route-text">
+            <b>Status: </b> {status}
+        </div>
+    </tpl>
+
+</div>
+
+

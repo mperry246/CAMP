@@ -1,0 +1,71 @@
+<textarea id="bodyTemplate-event" class="x-hidden-display">   
+    <div class="sch-event-footer">
+        <div class="delete" data-qtip="Delete {appointmentName}"></div>
+        <div id="appointmentRefNbr" class="appointment-header link-appointment">{appointmentName:ellipsis(25, true)} Number</div>
+    </div> 
+    <div class="appointment-description" style="text-align: left !important;">
+		<tpl for="records">      
+        
+        	<!--Customer Contact--> 
+       		<tpl if="data.FieldName=='Customer'">
+	            <div class="customer" data-qtip="Customer"></div>
+        	</tpl>
+
+	        <!--Contact Phone-->
+	        <tpl if="data.FieldName=='Contact'">
+	            <div class="contact" data-qtip="Contact"></div>
+	        </tpl>
+
+	        <!--Customer Name-->
+	        <tpl if="data.FieldName=='CustomerName'">
+	            <div class="industry" data-qtip="Customer Name"></div>
+	        </tpl>
+
+	         <!--Location -->
+	         <tpl if="data.FieldName=='CustomerLocation'">
+	            <div class="location" data-qtip="Customer Location"></div>
+	        </tpl>
+
+	        <!--Fist Service-->
+	        <tpl if="data.FieldName=='FirstService'">
+	            <div class="firstService" data-qtip="First Service"></div>
+	        </tpl>
+	        
+	        <!--Room-->
+	        <tpl if="data.FieldName=='Room'">
+	            <div class="house" data-qtip="Room"></div>
+	        </tpl>
+
+	        <!--Attendee Count-->
+	        <tpl if="data.FieldName=='AttendeeCount'">
+	            <div class="attendees" data-qtip="Number of attendees" ></div>
+	        </tpl>
+
+			<!--Service Order Reference Number-->
+	        <tpl if="data.FieldName=='SORefNbr'">
+	        	<div class="service-order-number" data-qtip="Service Order"></div> 
+	        </tpl>  
+
+	        <!--Confirmed-->
+	        <tpl if="data.FieldName=='Confirmed'">
+	          	<div class="sch-event-confirmed">
+	                  <div class="img-confirmed" data-qtip="Confirmation: Confirmed"></div>
+	            </div>
+	        </tpl>
+
+	        <!--Status-->
+	        <tpl if="data.FieldName=='Status'">
+	            <div class="status" data-qtip="Status" ></div>
+	        </tpl>
+
+	        <!--Workflow Stage-->
+	        <tpl if="data.FieldName=='WorkflowStage'">
+	            <div class="workflow" data-qtip="Workflow Stage" ></div>
+	        </tpl>
+
+        	<div class="sch-event-contact">{data.FieldName:ellipsis(25, true)}&nbsp;</div> 
+			
+    	</tpl>
+    </div>
+</textarea>
+

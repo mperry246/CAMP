@@ -1,0 +1,99 @@
+.x-colorpicker {
+	border : 1px solid #98C0F4;
+	background : #FFF;
+}
+
+
+.x-cp-svcontainer{
+	position: center;
+	width: 196px;
+	height: 196px;
+	float: left;
+}
+
+.x-cp-svcolor {
+	background-image: url(../img/colorpicker/mask.png);
+	background-repeat: no-repeat;
+	background-color: red;
+	position: center;
+	width: 182px;
+	height: 182px;
+	float: left;
+	cursor: pointer;
+	margin: 7px;
+	_margin: 7px 7px 7px 4px;
+	_cursor: hand;
+	_background-image: none;
+	_filter: progid :   DXImageTransform.Microsoft.AlphaImageLoader (   src
+		= 
+		 'mask.png', sizingMethod =   'scale' );
+}
+
+.x-cp-svslider {
+	position: relative;
+	left: -7px;
+	top: -7px;
+	width: 15px;
+	height: 15px;
+	background-image: url(../img/colorpicker/slider-rgb.gif) !important;
+	background-repeat: no-repeat !important;
+	cursor: pointer;
+	_cursor: hand;
+}
+
+.x-cp-huecontainer{
+	position: center;
+	height: 196px;
+	width: 20px;
+	float: left;
+}
+
+.x-cp-huecolor {
+	height: 183px;
+	width: 9px;
+	float: left;
+	margin: 7px 0 0 5px;
+	background-image: url(../img/colorpicker/hue.png) !important;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	_cursor: hand;
+}
+
+.x-cp-hueslider {
+	position: relative;
+	left: -3px;
+	top: -7px;
+	width: 15px;
+	height: 15px;
+	background-image: url(../img/colorpicker/slider-rgb.gif) !important;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	_cursor: hand;
+}
+
+.x-cp-formcontainer {
+	float: left;
+	width: 116px;
+	padding: 2px;
+	margin: 7px !important;
+}
+
+.x-cp-clearfloat {
+	clear: both;
+}
+
+.x-cp-colorbox {
+	margin: 2px 5px 0 5px;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 10px;
+	height: 20px;
+	font-weight: bold;
+	padding: 3px 0;
+	cursor: pointer;
+	_cursor: hand;
+}
+
+.x-cp-formcontainer input {
+	text-align: center;
+}

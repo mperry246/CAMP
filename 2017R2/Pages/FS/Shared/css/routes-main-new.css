@@ -1,0 +1,274 @@
+/** General Classes for Routes**/
+.container{
+    margin: 17px 15px 0px 15px;
+}
+
+.x-panel-default {
+    border-color: #BBBBBB !important;
+}
+
+.x-hidden-display
+{
+    display: none;
+}
+
+.x-docked-top {
+    background-color: #E5E9EE !important;
+}
+
+.x-panel-header-default {
+    background-image: none !important;
+    background-color: #E5E9EE !important;
+    border-color: #BBBBBB !important;
+}
+
+.x-toolbar-default {
+    border-color: #BBBBBB !important;
+    border-width: 1px !important;
+    background-image: none !important;
+    background-color: #E5E9EE !important;
+}
+
+.x-grid-header-ct {
+    cursor: default;
+    zoom: 1;
+    padding: 0;
+    border: 1px solid #BBBBBB;
+    border-bottom-color: #BBBBBB;
+    background-image: none;
+    background-color: #c5c5c5;
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#f9f9f9),color-stop(100%,#e3e4e6));
+    background-image: -webkit-linear-gradient(top,#f9f9f9,#e3e4e6);
+    background-image: -moz-linear-gradient(top,#f9f9f9,#e3e4e6);
+    background-image: -o-linear-gradient(top,#f9f9f9,#e3e4e6);
+    background-image: linear-gradient(top,#f9f9f9,#e3e4e6);
+}
+
+.x-panel-header-text-container-default {
+    font-family: Arial, sans-serif, Tahoma, Verdana !important;
+    font-size: 12px !important;
+    color: #4E576A !important;
+}
+
+.x-panel-body-default{
+    background: #FFFFFF !important;
+}
+
+.tab-filter > .x-tab-bar > .x-tab-bar-body > .x-horizontal-box-overflow-body{
+    background-color: #F5F5F5 !important;
+}
+
+/** General Route Tree Classes **/
+.route-tree-main > .x-grid-header-ct > .x-box-inner {
+    margin-left: 1px;
+}
+
+.route-tree-main .route-icon-cls {
+    background-image: url(../img/tree/route.png) !important;
+}
+
+.employee-route-tree-main .route-icon-cls {
+    background-image: url(../img/tree/employee.png) !important;
+}
+
+.appointment-icon-cls {
+    background-image: url(../img/tree/leaf.png) !important;
+}
+
+.x-tree-arrows .x-tree-expander {
+    background-image: url(../img/tree/arrows.png) !important;
+}
+
+.x-grid-row-before-focused .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+    border-bottom-width: 1px;
+}
+
+.x-grid-row-before-selected .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+}
+
+.x-grid-row-focused .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+    border-bottom-width: 1px;
+}
+
+.x-grid-row-selected .x-grid-td {
+    border-bottom-style: solid !important;
+    border-bottom-color: transparent !important;
+}
+
+.x-grid-body .x-grid-table-focused-first {
+    border-top: 1px solid transparent !important;
+}
+
+/* Tbar Tree Route */
+
+.icon-previous
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/general/glyphicons-halflings.png) 40px -70px !important;
+}
+
+.icon-next
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/general/glyphicons-halflings.png) 16px -70px !important;
+}
+
+.icon-save
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/button/save-btn.png) 1px 1px !important;
+    margin: 0 0 0 1px;
+}
+
+.icon-undo
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/button/undo-btn.png) 0px 1px !important;
+    margin: 0 0 0 1px;
+}
+
+.icon-calculate
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/button/calculate-btn.png) 0px 0px !important;
+    margin: 1px 0 0 1px;
+}
+
+.icon-expanded-list
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/general/expanded-list-btn.png) !important;
+    background-repeat: no-repeat !important;
+    margin: 3px 0px 0px 1px;
+}
+
+.icon-check-list
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/general/check-list-btn.png) 0px 1px !important;
+    margin: 0 0 0 3px;
+}
+
+.icon-marker-window
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/general/marker-window-btn.png) 0px 1px !important;
+    margin: 1px 0 0 1px;
+}
+
+.icon-truck
+{
+    height: 16px !important;
+    width: 16px !important;
+    background: url(../img/general/truck-icon.png) 0px 1px !important;
+    margin: 1px 0 0 1px;
+}
+
+.x-btn-default-toolbar-medium {
+    padding: 1px 0px 0px 1px !important;
+    top: 0px !important;
+    width: 23px !important;
+    height: 23px !important;
+}
+
+.x-menu-date-item {
+    border-color: #BBBBBB !important;
+}
+
+.x-datepicker-header {
+    background-image: none !important;
+    background-color: #4E576A !important;
+}
+
+.x-datepicker-arrow {
+    background-color: #4E576A !important;
+}
+
+.x-datepicker-footer, .x-monthpicker-buttons {
+    background-image: none !important;
+    background-color: #E5E9EE !important;
+    border-color: #BBBBBB !important;
+}
+
+.x-panel-body-default {
+    border-color: #BBBBBB !important;
+}
+
+.x-datepicker-prev {
+    left: 6px;
+    background-image: url(../img/date-picker/left-btn.png) !important;
+}
+
+.x-datepicker-next {
+    right: 6px;
+    background-image: url(../img/date-picker/right-btn.png) !important;
+}
+
+/** General Google Map Classes**/
+.route-gmap-main{
+    z-index: 1
+}
+
+/** General Route Tree Classes **/
+.route-info-main{
+
+}
+
+/** Route Information Panel Classes **/
+.info-route-container{
+    padding: 5px !important;
+    font: normal 11px/13px tahoma,arial,verdana,sans-serif !important;
+}
+
+.info-route-title{
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.info-route-text{
+    padding: 1px;
+}
+
+.highlighted-info-window{
+    padding-top: 1px;
+    font-weight: bold;
+    font-size: 11px;
+    color: #000000;
+}
+
+.not-highlighted-info-window{
+    padding-top: 1px;
+    font-weight: normal;
+    font-size: 11px;
+    color: #A5A5A5;
+}
+
+.node-google-error{
+    color: darkred !important;
+}
+
+.icon-google-error{
+    background-image: url(../img/tree/red-warning.png) !important;
+}
+
+.node-google-error ~ td{
+    color: darkred !important;
+}
+
+tr.row-error td div img.route-icon-cls{
+    background-image: url(../img/tree/red-warning.png) !important;
+}

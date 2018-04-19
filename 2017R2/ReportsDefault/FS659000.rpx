@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Name="report1">
+  <ExcelColumns>
+    <item>13</item>
+    <item>31</item>
+    <item>12</item>
+    <item>23</item>
+    <item>13</item>
+    <item>21</item>
+    <item>13</item>
+    <item>20</item>
+    <item>14</item>
+    <item>10</item>
+  </ExcelColumns>
+  <ExcelMode>Manual</ExcelMode>
+  <Filters>
+    <FilterExp>
+      <DataField>FSEquipment.EquipmentTypeID</DataField>
+      <OpenBraces>1</OpenBraces>
+      <Operator>Or</Operator>
+      <Value>@EquipmentType</Value>
+    </FilterExp>
+    <FilterExp>
+      <CloseBraces>1</CloseBraces>
+      <Condition>IsNull</Condition>
+      <DataField>@EquipmentType</DataField>
+    </FilterExp>
+  </Filters>
+  <GridSize>4px, 4px</GridSize>
+  <NavigationTree>False</NavigationTree>
+  <PageSettings>
+    <Landscape>True</Landscape>
+  </PageSettings>
+  <Parameters>
+    <ReportParameter>
+      <Name>EquipmentType</Name>
+      <Nullable>True</Nullable>
+      <Prompt>Equipment Type</Prompt>
+      <ViewName>=Report.GetFieldSchema('FSEquipment.EquipmentTypeID')</ViewName>
+    </ReportParameter>
+    <ReportParameter>
+      <DefaultValue>=False</DefaultValue>
+      <Name>ComponentDetail</Name>
+      <Nullable>True</Nullable>
+      <Prompt>Component Detail</Prompt>
+      <Type>Boolean</Type>
+    </ReportParameter>
+  </Parameters>
+  <Relations>
+    <ReportRelation>
+      <ChildName>FSEquipmentComponent</ChildName>
+      <Links>
+        <RelationRow>
+          <ChildField>SMEquipmentID</ChildField>
+          <ParentField>SMEquipmentID</ParentField>
+        </RelationRow>
+      </Links>
+      <ParentName>FSEquipment</ParentName>
+    </ReportRelation>
+  </Relations>
+  <SchemaUrl>http://localhost/report6/</SchemaUrl>
+  <StylesTemplate>TemplateReport.rpx</StylesTemplate>
+  <Tables>
+    <ReportTable Name="FSEquipment">
+      <Fields>
+        <ReportField Name="ARTranLineNbr">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="Axles">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="Barcode"></ReportField>
+        <ReportField Name="BranchID"></ReportField>
+        <ReportField Name="BranchID_Branch_acctName"></ReportField>
+        <ReportField Name="BranchID_description"></ReportField>
+        <ReportField Name="BranchLocationID"></ReportField>
+        <ReportField Name="BranchLocationID_description"></ReportField>
+        <ReportField Name="BranchLocationID_FSBranchLocation_descr"></ReportField>
+        <ReportField Name="ColorID"></ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByID_Creator_username"></ReportField>
+        <ReportField Name="CreatedByID_description"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="CustomerID"></ReportField>
+        <ReportField Name="CustomerID_description"></ReportField>
+        <ReportField Name="CustomerID_FSCustomer_acctName"></ReportField>
+        <ReportField Name="CustomerLocationID"></ReportField>
+        <ReportField Name="CustomerLocationID_description"></ReportField>
+        <ReportField Name="CustomerLocationID_Location_descr"></ReportField>
+        <ReportField Name="DateInstalled">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="Descr"></ReportField>
+        <ReportField Name="EngineNo"></ReportField>
+        <ReportField Name="EquipmentTypeID"></ReportField>
+        <ReportField Name="EquipmentTypeID_description"></ReportField>
+        <ReportField Name="EquipmentTypeID_FSEquipmentType_descr"></ReportField>
+        <ReportField Name="FuelTank1">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="FuelTank2">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="FuelType"></ReportField>
+        <ReportField Name="GrossVehicleWeight">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="INSerialNumber"></ReportField>
+        <ReportField Name="InventoryID"></ReportField>
+        <ReportField Name="InventoryID_description"></ReportField>
+        <ReportField Name="InventoryID_InventoryItem_descr"></ReportField>
+        <ReportField Name="IsVehicle">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByID_description"></ReportField>
+        <ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LocationID"></ReportField>
+        <ReportField Name="LocationID_description"></ReportField>
+        <ReportField Name="LocationID_INLocation_descr"></ReportField>
+        <ReportField Name="LocationType"></ReportField>
+        <ReportField Name="ManufacturerID"></ReportField>
+        <ReportField Name="ManufacturerID_description"></ReportField>
+        <ReportField Name="ManufacturerID_FSManufacturer_descr"></ReportField>
+        <ReportField Name="ManufacturerModelID"></ReportField>
+        <ReportField Name="ManufacturerModelID_description"></ReportField>
+        <ReportField Name="ManufacturerModelID_FSManufacturerModel_descr"></ReportField>
+        <ReportField Name="ManufacturingYear"></ReportField>
+        <ReportField Name="MaxMiles">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="Mem_UnassignedVehicle">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="NoteActivity"></ReportField>
+        <ReportField Name="NoteFiles"></ReportField>
+        <ReportField Name="NoteID">
+          <DataType>Object</DataType>
+        </ReportField>
+        <ReportField Name="NoteImages"></ReportField>
+        <ReportField Name="NoteText"></ReportField>
+        <ReportField Name="OwnerID"></ReportField>
+        <ReportField Name="OwnerID_description"></ReportField>
+        <ReportField Name="OwnerID_FSCustomer_acctName"></ReportField>
+        <ReportField Name="OwnerType"></ReportField>
+        <ReportField Name="PropertyType"></ReportField>
+        <ReportField Name="PurchAmount">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PurchDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="PurchPONumber"></ReportField>
+        <ReportField Name="RefNbr"></ReportField>
+        <ReportField Name="RegisteredDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="RegistrationNbr"></ReportField>
+        <ReportField Name="RequireMaintenance">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="ResourceEquipment">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="SalesDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="SerialNumber"></ReportField>
+        <ReportField Name="SiteID"></ReportField>
+        <ReportField Name="SiteID_description"></ReportField>
+        <ReportField Name="SiteID_INSite_descr"></ReportField>
+        <ReportField Name="SMEquipmentID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="SourceDocType"></ReportField>
+        <ReportField Name="SourceID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="SourceRefNbr"></ReportField>
+        <ReportField Name="SourceType"></ReportField>
+        <ReportField Name="Status"></ReportField>
+        <ReportField Name="SubItemID"></ReportField>
+        <ReportField Name="TagNbr"></ReportField>
+        <ReportField Name="TareWeight">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="tstamp"></ReportField>
+        <ReportField Name="VehicleTypeID"></ReportField>
+        <ReportField Name="VendorID"></ReportField>
+        <ReportField Name="VendorID_BAccountSelectorBase_acctName"></ReportField>
+        <ReportField Name="VendorID_description"></ReportField>
+        <ReportField Name="WeightCapacity">
+          <DataType>Decimal</DataType>
+        </ReportField>
+      </Fields>
+      <FullName>PX.Objects.FS.FSEquipment</FullName>
+    </ReportTable>
+    <ReportTable Name="FSEquipmentComponent">
+      <Fields>
+        <ReportField Name="Comment"></ReportField>
+        <ReportField Name="ComponentID"></ReportField>
+        <ReportField Name="ComponentReplaced"></ReportField>
+        <ReportField Name="CpnyWarrantyDuration">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="CpnyWarrantyEndDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="CpnyWarrantyType"></ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByID_Creator_username"></ReportField>
+        <ReportField Name="CreatedByID_description"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="InstallationDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="InstAppointmentID"></ReportField>
+        <ReportField Name="InstAppointmentID_description"></ReportField>
+        <ReportField Name="InstAppointmentID_FSAppointment_docDesc"></ReportField>
+        <ReportField Name="InstServiceOrderID"></ReportField>
+        <ReportField Name="InstServiceOrderID_description"></ReportField>
+        <ReportField Name="InstServiceOrderID_FSServiceOrder_docDesc"></ReportField>
+        <ReportField Name="InventoryID"></ReportField>
+        <ReportField Name="InvoiceRefNbr"></ReportField>
+        <ReportField Name="ItemClassID"></ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByID_description"></ReportField>
+        <ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastReplacementDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LineNbr">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="LineRef"></ReportField>
+        <ReportField Name="LongDescr"></ReportField>
+        <ReportField Name="Mem_Description"></ReportField>
+        <ReportField Name="RequireSerial">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="SalesDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="SalesOrderNbr"></ReportField>
+        <ReportField Name="SalesOrderType"></ReportField>
+        <ReportField Name="SerialNumber"></ReportField>
+        <ReportField Name="SMEquipmentID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="Status"></ReportField>
+        <ReportField Name="tstamp"></ReportField>
+        <ReportField Name="VendorID"></ReportField>
+        <ReportField Name="VendorID_BAccountSelectorBase_acctName"></ReportField>
+        <ReportField Name="VendorID_description"></ReportField>
+        <ReportField Name="VendorWarrantyDuration">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="VendorWarrantyEndDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="VendorWarrantyType"></ReportField>
+      </Fields>
+      <FullName>PX.Objects.FS.FSEquipmentComponent</FullName>
+    </ReportTable>
+  </Tables>
+  <Sections>
+    <PageHeader Name="pageHeaderSection1">
+      <ExcelMargin>
+        <bottom>1</bottom>
+      </ExcelMargin>
+      <GridSize>8px, 8px</GridSize>
+      <Height>56px</Height>
+      <Items>
+        <TextBox Name="textBox11">
+          <Excel>
+            <row>2</row>
+          </Excel>
+          <Location>4px, 20px</Location>
+          <Size>76px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>Company:</Value>
+        </TextBox>
+        <TextBox Name="textBox12">
+          <Excel>
+            <column>2</column>
+            <row>2</row>
+          </Excel>
+          <Location>80px, 20px</Location>
+          <Size>168px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowCompanyBAccount.AcctName')</Value>
+        </TextBox>
+        <TextBox Name="textBox14">
+          <Excel>
+            <column>9</column>
+            <row>2</row>
+          </Excel>
+          <Location>880px, 20px</Location>
+          <Size>36px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>Date:</Value>
+        </TextBox>
+        <TextBox Name="textBox15">
+          <Excel>
+            <column>9</column>
+          </Excel>
+          <Location>880px, 4px</Location>
+          <Size>36px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>Page:</Value>
+        </TextBox>
+        <TextBox Name="textBox16">
+          <Excel>
+            <row>3</row>
+          </Excel>
+          <Location>4px, 36px</Location>
+          <Size>76px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>User:</Value>
+        </TextBox>
+        <TextBox Name="textBox17">
+          <Excel>
+            <column>10</column>
+          </Excel>
+          <Location>920px, 4px</Location>
+          <Size>100px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=[PageOf]</Value>
+        </TextBox>
+        <TextBox Name="textBox18">
+          <Excel>
+            <column>2</column>
+            <row>3</row>
+          </Excel>
+          <Location>80px, 36px</Location>
+          <Size>168px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowAccessInfo.DisplayName')</Value>
+        </TextBox>
+        <TextBox Name="textBox19">
+          <Excel>
+            <column>10</column>
+            <row>2</row>
+          </Excel>
+          <Format>g</Format>
+          <Location>920px, 20px</Location>
+          <Size>100px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=Now()</Value>
+        </TextBox>
+        <TextBox Name="textBox4">
+          <Location>4px, 0px</Location>
+          <Size>244px, 16px</Size>
+          <StyleName>Report Name</StyleName>
+          <Value>Target Equipment List</Value>
+        </TextBox>
+      </Items>
+    </PageHeader>
+    <Detail Name="detailSection1">
+      <GridSize>8px, 8px</GridSize>
+      <Height>14px</Height>
+      <VisibleExpr>= [@ComponentDetail] = True And [FSEquipmentComponent.ComponentID] &lt;&gt; Null</VisibleExpr>
+      <Items>
+        <TextBox Name="textBox37">
+          <Location>316px, 0px</Location>
+          <Size>116px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[FSEquipmentComponent.ComponentID]</Value>
+        </TextBox>
+        <TextBox Name="textBox41">
+          <Excel>
+            <column>3</column>
+          </Excel>
+          <Location>564px, 0px</Location>
+          <Size>164px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[FSEquipmentComponent.CpnyWarrantyEndDate]</Value>
+        </TextBox>
+        <TextBox Name="textBox42">
+          <Excel>
+            <column>2</column>
+          </Excel>
+          <Location>436px, 0px</Location>
+          <Size>124px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[FSEquipmentComponent.SerialNumber]</Value>
+        </TextBox>
+        <TextBox Name="textBox43">
+          <Excel>
+            <column>4</column>
+          </Excel>
+          <Location>732px, 0px</Location>
+          <Size>164px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[FSEquipmentComponent.VendorWarrantyEndDate]</Value>
+        </TextBox>
+        <TextBox Name="textBox44">
+          <Excel>
+            <column>5</column>
+          </Excel>
+          <Location>900px, 0px</Location>
+          <Size>120px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[FSEquipmentComponent.VendorID]</Value>
+        </TextBox>
+      </Items>
+    </Detail>
+    <PageFooter Name="pageFooterSection1">
+      <GridSize>8px, 8px</GridSize>
+      <Height>5px</Height>
+      <Visible>False</Visible>
+    </PageFooter>
+    <ReportFooter Name="reportFooterSection1">
+      <GridSize>8px, 8px</GridSize>
+      <Height>20px</Height>
+    </ReportFooter>
+    <PageHeader Name="pageHeaderSection2">
+      <GridSize>8px, 8px</GridSize>
+      <Height>0.5291cm</Height>
+      <StyleName>ColumnsHeaderSection</StyleName>
+      <VisibleExpr>= [@ComponentDetail] = False</VisibleExpr>
+      <Items>
+        <TextBox Name="textBox1">
+          <Excel>
+            <column>9</column>
+          </Excel>
+          <Location>732px, 4px</Location>
+          <Size>96px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Installation Date</Value>
+        </TextBox>
+        <TextBox Name="textBox2">
+          <Excel>
+            <column>10</column>
+          </Excel>
+          <Location>832px, 4px</Location>
+          <Size>60px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Status</Value>
+        </TextBox>
+        <TextBox Name="textBox3">
+          <Excel>
+            <column>10</column>
+          </Excel>
+          <Location>896px, 4px</Location>
+          <Size>124px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Model</Value>
+        </TextBox>
+        <TextBox Name="textBox30">
+          <Excel>
+            <column>4</column>
+          </Excel>
+          <Location>316px, 4px</Location>
+          <Size>112px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Owner</Value>
+        </TextBox>
+        <TextBox Name="textBox40">
+          <Excel>
+            <column>3</column>
+          </Excel>
+          <Location>196px, 4px</Location>
+          <Size>116px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Description</Value>
+        </TextBox>
+        <TextBox Name="textBox55">
+          <Excel>
+            <column>2</column>
+          </Excel>
+          <Location>100px, 4px</Location>
+          <Size>92px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Equipment Type</Value>
+        </TextBox>
+        <TextBox Name="textBox56">
+          <Location>4px, 4px</Location>
+          <Size>92px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Equipment Nbr.</Value>
+        </TextBox>
+        <TextBox Name="textBox6">
+          <Excel>
+            <column>8</column>
+          </Excel>
+          <Location>664px, 4px</Location>
+          <Size>64px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Sales Date</Value>
+        </TextBox>
+        <TextBox Name="textBox7">
+          <Excel>
+            <column>7</column>
+          </Excel>
+          <Location>564px, 4px</Location>
+          <Size>96px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Serial Number</Value>
+        </TextBox>
+        <TextBox Name="textBox8">
+          <Excel>
+            <column>6</column>
+          </Excel>
+          <Location>432px, 4px</Location>
+          <Size>128px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Location</Value>
+        </TextBox>
+      </Items>
+    </PageHeader>
+  </Sections>
+  <Items />
+  <Groups>
+    <Group Name="FSEquipment">
+      <Grouping>
+        <GroupExp>
+          <DataField>FSEquipment.OwnerID</DataField>
+        </GroupExp>
+        <GroupExp>
+          <DataField>FSEquipment.SMEquipmentID</DataField>
+        </GroupExp>
+      </Grouping>
+      <Headers>
+        <Header Name="groupHeaderSection1">
+          <GridSize>8px, 8px</GridSize>
+          <Height>0.63492cm</Height>
+          <StyleName>ColumnsHeaderSection</StyleName>
+          <VisibleExpr>= [@ComponentDetail] = True</VisibleExpr>
+          <Items>
+            <TextBox Name="textBox24">
+              <Excel>
+                <column>10</column>
+              </Excel>
+              <Location>832px, 4px</Location>
+              <Size>60px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Status</Value>
+            </TextBox>
+            <TextBox Name="textBox25">
+              <Excel>
+                <column>10</column>
+              </Excel>
+              <Location>896px, 4px</Location>
+              <Size>124px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Model</Value>
+            </TextBox>
+            <TextBox Name="textBox26">
+              <Excel>
+                <column>8</column>
+              </Excel>
+              <Location>664px, 4px</Location>
+              <Size>64px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Sales Date</Value>
+            </TextBox>
+            <TextBox Name="textBox28">
+              <Excel>
+                <column>7</column>
+              </Excel>
+              <Location>564px, 4px</Location>
+              <Size>96px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Serial Number</Value>
+            </TextBox>
+            <TextBox Name="textBox29">
+              <Excel>
+                <column>6</column>
+              </Excel>
+              <Location>432px, 4px</Location>
+              <Size>128px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Location</Value>
+            </TextBox>
+            <TextBox Name="textBox31">
+              <Excel>
+                <column>4</column>
+              </Excel>
+              <Location>316px, 4px</Location>
+              <Size>112px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Owner</Value>
+            </TextBox>
+            <TextBox Name="textBox52">
+              <Excel>
+                <column>3</column>
+              </Excel>
+              <Location>196px, 4px</Location>
+              <Size>116px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Description</Value>
+            </TextBox>
+            <TextBox Name="textBox53">
+              <Excel>
+                <column>2</column>
+              </Excel>
+              <Location>100px, 4px</Location>
+              <Size>92px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Equipment Type</Value>
+            </TextBox>
+            <TextBox Name="textBox54">
+              <Location>4px, 4px</Location>
+              <Size>92px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Equipment Nbr.</Value>
+            </TextBox>
+            <TextBox Name="textBox9">
+              <Excel>
+                <column>9</column>
+              </Excel>
+              <Location>732px, 4px</Location>
+              <Size>96px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Installation Date</Value>
+            </TextBox>
+          </Items>
+        </Header>
+      </Headers>
+      <Footers>
+        <Footer Name="groupFooterSection1">
+          <GridSize>8px, 8px</GridSize>
+          <Height>0.21164cm</Height>
+          <Visible>False</Visible>
+        </Footer>
+      </Footers>
+    </Group>
+    <Group Name="FSEquipmentComponent">
+      <Grouping>
+        <GroupExp>
+          <DataField>FSEquipmentComponent.SMEquipmentID</DataField>
+        </GroupExp>
+      </Grouping>
+      <Headers>
+        <Header Name="groupHeaderSection2">
+          <GridSize>8px, 8px</GridSize>
+          <Height>0.74074cm</Height>
+          <StyleName>GroupHighlight</StyleName>
+          <Items>
+            <TextBox Name="textBox38">
+              <Excel>
+                <column>10</column>
+              </Excel>
+              <Location>832px, 8px</Location>
+              <Size>60px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.Status]</Value>
+            </TextBox>
+            <TextBox Name="textBox39">
+              <Excel>
+                <column>9</column>
+              </Excel>
+              <Location>732px, 8px</Location>
+              <Size>96px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.DateInstalled]</Value>
+            </TextBox>
+            <TextBox Name="textBox45">
+              <Excel>
+                <column>4</column>
+              </Excel>
+              <Location>316px, 8px</Location>
+              <Size>112px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=IIf( [FSEquipment.OwnerType] = 'OW', 'Self', [FSEquipment.OwnerID] + #010;IIf( [FSEquipment.OwnerID_description] &lt;&gt; Null, ' - '+ [FSEquipment.OwnerID_description], ''))#010;</Value>
+            </TextBox>
+            <TextBox Name="textBox46">
+              <Excel>
+                <column>2</column>
+              </Excel>
+              <Location>100px, 8px</Location>
+              <Size>92px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.EquipmentTypeID]</Value>
+            </TextBox>
+            <TextBox Name="textBox47">
+              <Excel>
+                <column>3</column>
+              </Excel>
+              <Location>196px, 8px</Location>
+              <Size>116px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.Descr]</Value>
+            </TextBox>
+            <TextBox Name="textBox48">
+              <Location>4px, 8px</Location>
+              <NavigateMethod>Server</NavigateMethod>
+              <Size>92px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.RefNbr]</Value>
+            </TextBox>
+            <TextBox Name="textBox49">
+              <Excel>
+                <column>8</column>
+              </Excel>
+              <Location>664px, 8px</Location>
+              <Size>64px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.SalesDate]</Value>
+            </TextBox>
+            <TextBox Name="textBox5">
+              <Excel>
+                <column>10</column>
+              </Excel>
+              <Location>896px, 8px</Location>
+              <Size>124px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.InventoryID] + IIf( [FSEquipment.InventoryID_description] &lt;&gt; Null, ' - '+ [FSEquipment.InventoryID_description], '')</Value>
+            </TextBox>
+            <TextBox Name="textBox50">
+              <Excel>
+                <column>7</column>
+              </Excel>
+              <Location>564px, 8px</Location>
+              <Size>96px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=[FSEquipment.SerialNumber]</Value>
+            </TextBox>
+            <TextBox Name="textBox51">
+              <Excel>
+                <column>6</column>
+              </Excel>
+              <Location>432px, 8px</Location>
+              <Size>128px, 14px</Size>
+              <StyleName>Normal</StyleName>
+              <Value>=IIf( [FSEquipment.LocationType] = 'CU', #010;#010;[FSEquipment.CustomerID] +#010;IIf( [FSEquipment.CustomerID_description] &lt;&gt; Null, ' - '+ [FSEquipment.CustomerID_description], ''), #010;#010;[FSEquipment.BranchID] +#010;IIf( [FSEquipment.BranchID_description] &lt;&gt; Null, ' - '+ [FSEquipment.BranchID_description], ''))</Value>
+            </TextBox>
+          </Items>
+        </Header>
+        <Header Name="groupHeaderSection3">
+          <GridSize>8px, 8px</GridSize>
+          <Height>0.63492cm</Height>
+          <StyleName>GroupL1Highlight</StyleName>
+          <VisibleExpr>= [@ComponentDetail] = True And [FSEquipmentComponent.ComponentID] &lt;&gt; Null</VisibleExpr>
+          <Items>
+            <TextBox Name="textBox61">
+              <Excel>
+                <column>5</column>
+              </Excel>
+              <Location>900px, 4px</Location>
+              <Size>120px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Vendor ID</Value>
+            </TextBox>
+            <TextBox Name="textBox62">
+              <Excel>
+                <column>4</column>
+              </Excel>
+              <Location>732px, 4px</Location>
+              <Size>164px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Vendor Warranty End Date</Value>
+            </TextBox>
+            <TextBox Name="textBox63">
+              <Excel>
+                <column>3</column>
+              </Excel>
+              <Location>564px, 4px</Location>
+              <Size>164px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Company Warranty End Date</Value>
+            </TextBox>
+            <TextBox Name="textBox64">
+              <Excel>
+                <column>2</column>
+              </Excel>
+              <Location>436px, 4px</Location>
+              <Size>124px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Serial Number</Value>
+            </TextBox>
+            <TextBox Name="textBox65">
+              <Location>316px, 4px</Location>
+              <Size>116px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Component ID</Value>
+            </TextBox>
+          </Items>
+        </Header>
+      </Headers>
+      <Footers>
+        <Footer Name="groupFooterSection2">
+          <GridSize>8px, 8px</GridSize>
+          <Height>0.21164cm</Height>
+          <Visible>False</Visible>
+        </Footer>
+      </Footers>
+    </Group>
+  </Groups>
+</Report>

@@ -1,0 +1,99 @@
+﻿<textarea id="bodyTemplate-appointment" class="x-hidden-display">   
+    <div class="sch-event-footer">
+        <tpl if="WarningCounter&amp;gt;0">
+            <div class="alert" data-qtip="
+                <tpl if="WarningResourceAvailableFlag">
+                    - {WarningResourceAvailableMessage} <br>
+                </tpl>
+                <tpl if="WarningAppointmentValidFlag">
+                    - {WarningAppointmentValidMessage} <br>
+                </tpl>
+                <tpl if="WarningAppointmentValidatedByDispatcherFlag">
+                    - {WarningAppointmentValidatedByDispatcherMessage} <br>
+                </tpl>
+                "></div>
+        </tpl>
+        <tpl if="Appointment.EmployeeCount&amp;gt;1">
+            <div class="users" data-qtip = "{TotalEmployeesMessage}" ></div>
+        </tpl>
+        <tpl if="Appointment.CanDeleteAppointment && !Ext.isEmpty(StatusName) && StatusName!='Closed' && StatusName!='Canceled' && StatusName!='Completed'">
+            <div class="delete" data-qtip="Delete {AppointmentName}"></div>
+        </tpl>
+        <div id="appointmentRefNbr" class="appointment-header link-appointment">{Text}</div>
+    </div> 
+    <div class="appointment-description" style="text-align: left !important;">
+        <tpl for="Preferences">
+            <!--Service Order Reference Number--> 
+            <tpl if="FieldName=='SORefNbr' && parent.Appointment.SORefNbr!=''">
+                <div class="service-order-number" data-qtip="Service Order: {parent.Appointment.SORefNbr}"></div>
+                <div id="serviceOrderRefNbr" class="sch-event-contact link-serviceOrder">{parent.Appointment.SORefNbr:ellipsis(25, true)}&nbsp;</div> 
+            </tpl>
+            <!--Customer Contact--> 
+            <tpl if="FieldName=='Customer' && parent.Appointment.ContactName!=''">
+                <div class="customer" data-qtip="Customer: {parent.Appointment.ContactName}"></div>
+                <div class="sch-event-customer">{parent.Appointment.ContactName:ellipsis(25, true)}&nbsp;</div> 
+            </tpl>
+
+            <!--Contact Phone-->
+            <tpl if="FieldName=='Contact' && !Ext.isEmpty(parent.Appointment.ContactPhone)">
+                <div class="contact" data-qtip="Contact: {parent.Appointment.ContactPhone}"></div>
+                <div class="sch-event-contact">{parent.Appointment.ContactPhone:ellipsis(25, true)}&nbsp;</div> 
+            </tpl>
+
+            <!--Customer Name-->
+            <tpl if="FieldName=='CustomerName' && !Ext.isEmpty(parent.Appointment.CustomerName)">
+                <div class="industry" data-qtip="Customer Name: {parent.Appointment.CustomerName}"></div>
+                <div class="sch-event-contact">{parent.Appointment.CustomerName:ellipsis(25, true)}&nbsp;</div> 
+            </tpl>
+
+             <!--Location -->
+            <tpl if="FieldName=='CustomerLocation' && !Ext.isEmpty(parent.Appointment.LocationDesc)">
+                <div class="location" data-qtip="Customer Location: {parent.Appointment.LocationDesc}"></div>
+                <div class="sch-event-contact">{parent.Appointment.LocationDesc:ellipsis(25, true)}&nbsp;</div> 
+            </tpl>
+
+            <!--Fist Service-->
+            <tpl if="FieldName=='FirstService' && !Ext.isEmpty(parent.Appointment.FirstServiceDesc)">
+                <div class="firstService" data-qtip="First Service: {parent.Appointment.FirstServiceDesc}"></div>
+                <div class="sch-event-contact">{parent.Appointment.FirstServiceDesc:ellipsis(25, true)}&nbsp;</div> 
+            </tpl>
+            
+            <!--Room-->
+            <tpl if="FieldName=='Room' && !Ext.isEmpty(parent.Appointment.RoomDesc)">
+                <div class="house" data-qtip="Room: {parent.Appointment.RoomDesc}"></div>
+                <div class="sch-event-contact">{parent.Appointment.RoomDesc:ellipsis(25, true)}&nbsp;</div> 
+            </tpl>
+
+            <!--AttendeeCount-->
+            <tpl if="FieldName=='AttendeeCount' && parent.Appointment.AttendeeCount&amp;gt;0">
+                <div class="attendees" data-qtip="Number of attendees: {parent.Appointment.AttendeeCount}"></div>
+                <div class="sch-event-contact">{parent.Appointment.AttendeeCount} Attendee(s)&nbsp;</div>
+            </tpl>
+
+            <!--Status-->
+            <tpl if="FieldName=='Status' && parent.StatusName!=''">
+                <div class="status" data-qtip="Status: {parent.StatusName}"></div>
+                <div class="sch-event-contact">{parent.StatusName}&nbsp;</div>
+            </tpl>
+
+            <!--AttendeeCount-->
+            <tpl if="FieldName=='WorkflowStage' && parent.Appointment.WFStageCD!=''">
+                <div class="workflow" data-qtip="Workflow Stage: {parent.Appointment.WFStageCD}"></div>
+                <div class="sch-event-contact">{parent.Appointment.WFStageCD}&nbsp;</div>
+            </tpl>
+
+            <div class="sch-event-confirmed">
+                <tpl if="FieldName=='Confirmed'">
+                    <tpl if="parent.Appointment.Confirmed">
+                         <div class="img-confirmed" data-qtip="Confirmation: Confirmed"></div>
+                         <div class="sch-event-contact">Confirmed&nbsp;</div>
+                    </tpl>  
+                    <tpl if="!parent.Appointment.Confirmed">
+                       <div class="img-not-confirmed" data-qtip="Confirmation: Not Confirmed"></div>
+                         <div class="sch-event-contact">Not Confirmed&nbsp;</div>
+                    </tpl>
+                </tpl>
+            </div>
+        </tpl>
+    </div>
+</textarea>
